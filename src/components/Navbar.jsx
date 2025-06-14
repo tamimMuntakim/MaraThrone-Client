@@ -1,14 +1,36 @@
 import { Link, NavLink } from 'react-router';
 import "./Navbar.css"
 import { Tooltip } from 'react-tooltip'
+import { use } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+
+    const { user, logOut } = use(AuthContext);
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/marathons">Marathons</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
     </>
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Successfully Logged out!!",
+                    timer: 1500
+                });
+            }).catch(() => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Please try again !!",
+                    timer: 1500
+                });
+            });
+    }
 
     return (
         <nav className="w-11/12 md:container mx-auto navbar p-0 flex justify-between">
@@ -31,7 +53,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex gap-2 md:gap-4 items-center">
-                {/* {user ?
+                {user ?
                     (
                         <>
                             <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
@@ -42,14 +64,13 @@ const Navbar = () => {
                                 </div>
                             </a>
                             <Tooltip id="my-tooltip" />
-                            <button onClick={handleLogout} className='btn btn-secondary text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Logout</button>
+                            <button onClick={handleLogout} className='btn btn-accent text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Logout</button>
                         </>)
                     :
                     (
-                        <Link to="/auth/login" className='btn btn-primary text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Login</Link>
+                        <Link to="/auth/login" className='btn btn-secondary text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Login</Link>
                     )
-                } */}
-                <Link to="/auth/login" className='btn btn-secondary text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Login</Link>
+                }
             </div >
         </nav >
     );
