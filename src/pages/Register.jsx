@@ -3,6 +3,8 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import RegisterLottie from "../assets/lotties/register_lottie.json"
+import Lottie from 'lottie-react';
 
 const Register = () => {
     const [error, setError] = useState("");
@@ -70,7 +72,12 @@ const Register = () => {
 
     return (
         <div className="flex justify-center items-center mt-4">
-            <title>BookMate || Register</title>
+            <title>MaraThrone || Register</title>
+            <div className='flex flex-col md:flex-row-reverse gap-2 md:gap-4 md:items-center'>
+                <div>
+                    <Lottie animationData={RegisterLottie} className='h-[150px] md:h-[350px] w-auto'
+                    ></Lottie>
+                </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl pt-5 border border-slate-200">
                 <h2 className="font-semibold text-lg md:text-2xl text-center">
                     Register your account
@@ -100,7 +107,7 @@ const Register = () => {
                             type="text"
                             className="input "
                             placeholder="Photo URl"
-                            defaultValue={"https://img.icons8.com/pulsar-gradient/96/user.png"}
+                            defaultValue={"https://i.ibb.co/KxV3xWSC/icons8-user-96.png"}
                             required
                         />
 
@@ -138,6 +145,7 @@ const Register = () => {
                         </p>
                     </fieldset>
                 </form>
+            </div>
             </div>
         </div>
     );

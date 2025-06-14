@@ -12,7 +12,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/marathons">Marathons</NavLink></li>
-        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        {(user) && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
     </>
 
     const handleLogout = () => {
@@ -64,11 +64,11 @@ const Navbar = () => {
                                 </div>
                             </a>
                             <Tooltip id="my-tooltip" />
-                            <button onClick={handleLogout} className='btn btn-accent text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Logout</button>
+                            <button onClick={handleLogout} className='btn btn-accent text-white btn-sm md:btn-md md:font-bold md:w-[100px]'>Logout</button>
                         </>)
                     :
                     (
-                        <Link to="/auth/login" className='btn btn-secondary text-white btn-sm md:btn-md md:font-bold md:w-[120px] '>Login</Link>
+                        <Link to="/auth/login" className='btn btn-secondary text-white btn-sm md:btn-md md:font-bold md:w-[100px]'>Login</Link>
                     )
                 }
             </div >

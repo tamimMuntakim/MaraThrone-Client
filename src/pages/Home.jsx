@@ -1,10 +1,13 @@
 import React from 'react';
+import Sliders from '../components/Sliders';
 
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <>
+            <section id="sliders" className="mt-10">
+                <Sliders></Sliders>
+            </section>
+        </>
     );
 };
 
