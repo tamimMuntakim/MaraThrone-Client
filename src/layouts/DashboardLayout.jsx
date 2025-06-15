@@ -12,7 +12,7 @@ const DashboardLayout = () => {
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main className='w-11/12 md:container mx-auto md:h-[calc(100vh-200px)] md:grid md:grid-cols-8 md:gap-4'>
+            <main className='w-11/12 md:container mx-auto md:h-[calc(100vh-150px)] md:grid md:grid-cols-8 md:gap-4'>
                 <aside className=' md:col-span-2 flex justify-center bg-secondary text-white'>
                     <div className="md:h-full md:sticky top-[calc(64px)] md:flex md:items-center w-full">
                         <DashboardMenu></DashboardMenu>
