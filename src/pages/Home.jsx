@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sliders from '../components/Sliders';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
+import HomeMarathons from '../components/HomeMarathons';
 
 const Home = () => {
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [homeMarathons, setHomeMarathons] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:3000/marathons?limit=true')
+            .then(function (response) {
+                setHomeMarathons(response.data);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+    }, []);
     return (
         <>
             <section id="sliders" className="mt-10">
                 <Sliders></Sliders>
             </section>
-            <div className='my-32'>
-
-                <DatePicker
-                    showIcon
-                    selected={selectedDate}
-                    onChange={(date) => setSelectedDate(date)}
-                />
-            </div>
+            <section id="marathons">
+                <HomeMarathons homeMarathons={homeMarathons}></HomeMarathons>
+            </section>
         </>
     );
 };
