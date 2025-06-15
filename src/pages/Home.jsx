@@ -20,7 +20,7 @@ const Home = () => {
             <section id="sliders" className="mt-10">
                 <Sliders></Sliders>
             </section>
-            <section id="marathons">
+            <section id="marathons" className='mt-7 md:mt-14'>
                 <HomeMarathons homeMarathons={homeMarathons}></HomeMarathons>
             </section>
         </>
