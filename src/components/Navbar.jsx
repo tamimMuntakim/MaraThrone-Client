@@ -10,9 +10,9 @@ const Navbar = () => {
     const { user, logOut } = use(AuthContext);
 
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/marathons">Marathons</NavLink></li>
-        {(user) && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
+        <li><NavLink to="/" className="navbar-navs">Home</NavLink></li>
+        <li><NavLink to="/marathons" className="navbar-navs">Marathons</NavLink></li>
+        {(user) && <li><NavLink to="/dashboard/add-marathon" className="navbar-navs">Dashboard</NavLink></li>}
     </>
 
     const handleLogout = () => {

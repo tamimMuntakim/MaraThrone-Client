@@ -10,6 +10,10 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
+import DashboardLayout from "../layouts/DashboardLayout";
+import AddMarathon from "../pages/AddMarathon";
+import MyMarathons from "../pages/MyMarathons";
+import MyAppliedMarathons from "../pages/MyAppliedMarathons";
 
 const router = createBrowserRouter(
     [
@@ -22,12 +26,30 @@ const router = createBrowserRouter(
                     element: <Home></Home>,
                 },
                 {
-                    path: "/dashboard",
-                    element: <Dashboard></Dashboard>,
-                },
-                {
                     path: "/marathons",
                     element: <Marathons></Marathons>,
+                },
+            ]
+        },
+        {
+            path: "/dashboard",
+            element: <DashboardLayout></DashboardLayout>,
+            children: [
+                {
+                    index: true,
+                    element: <AddMarathon></AddMarathon>,
+                },
+                {
+                    path: "/dashboard/add-marathon",
+                    element: <AddMarathon></AddMarathon>,
+                },
+                {
+                    path: "/dashboard/my-marathons",
+                    element: <MyMarathons></MyMarathons>,
+                },
+                {
+                    path: "/dashboard/my-applied-marathons",
+                    element: <MyAppliedMarathons></MyAppliedMarathons>,
                 },
             ]
         },
