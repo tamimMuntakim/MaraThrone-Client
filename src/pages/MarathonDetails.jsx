@@ -5,10 +5,6 @@ import { useLoaderData } from 'react-router';
 const MarathonDetails = () => {
     const marathon = useLoaderData();
     const now = new Date();
-    // console.log(now < parseISO(marathon?.regStartDate));
-    // console.log(now >= parseISO(marathon?.regStartDate));
-    // console.log(now <= parseISO(marathon?.regEndDate));
-    // console.log(now > parseISO(marathon?.regEndDate));
 
     return (
         <section id="marathon-details" className='mb-4 md:md-8'>

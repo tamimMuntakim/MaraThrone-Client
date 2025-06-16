@@ -30,7 +30,16 @@ const router = createBrowserRouter(
                 },
                 {
                     path: "/marathons",
+                    loader: async () => {
+                        try {
+                            const response = await axios.get("http://localhost:3000/marathons");
+                            return response.data;
+                        } catch (error) {
+                            throw new Response("Marathon not found", { status: 404 });
+                        }
+                    },
                     element: <Marathons></Marathons>,
+                    hydrateFallbackElement: <Loader></Loader>,
                 },
                 {
                     path: "/marathon-details/:id",
@@ -44,7 +53,7 @@ const router = createBrowserRouter(
                         }
                     },
                     element: <MarathonDetails></MarathonDetails>,
-                    hydrateFallbackElement: <Loader></Loader>
+                    hydrateFallbackElement: <Loader></Loader>,
                 },
             ]
         },

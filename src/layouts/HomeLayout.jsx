@@ -11,7 +11,7 @@ const HomeLayout = () => {
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main className='w-11/12 md:container mx-auto mt-4 md:mt-6 min-h-[calc(100vh-460px)] md:min-h-[calc(100vh-340px)]'>
+            <main className='w-11/12 md:container mx-auto my-4 md:my-6 min-h-[calc(100vh-460px)] md:min-h-[calc(100vh-340px)]'>
                 <Outlet></Outlet>
             </main>
             <footer>
