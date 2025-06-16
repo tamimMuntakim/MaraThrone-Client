@@ -15,7 +15,7 @@ const UpcomingMarathonCard = ({ marathon }) => {
                         {marathon?.distance}
                     </span>
                     <span className="text-xs md:text-sm text-gray-600">
-                        {format(parseISO(marathon?.expectedStartDate), "EEEE, MMM d, yyyy")}
+                        {format(parseISO(marathon?.expectedStartDate), "EEEE, MMMM do, yyyy")}
                     </span>
                 </div>
             </div>

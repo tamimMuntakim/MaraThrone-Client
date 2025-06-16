@@ -14,7 +14,6 @@ const Home = () => {
                 setHomeMarathons(response.data);
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             });
     }, []);
