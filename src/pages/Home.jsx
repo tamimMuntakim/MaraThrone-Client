@@ -4,6 +4,7 @@ import axios from 'axios';
 import HomeMarathons from '../components/HomeMarathons';
 import UpcomingMarathons from '../components/UpcomingMarathons';
 import RunnersFeedback from '../components/RunnersFeedback';
+import Faq from '../components/Faq';
 
 const Home = () => {
     const [homeMarathons, setHomeMarathons] = useState([]);
@@ -30,6 +31,9 @@ const Home = () => {
             </section>
             <section id="feedback" className='mt-7 md:mt-14'>
                 <RunnersFeedback></RunnersFeedback>
+            </section>
+            <section id="faq" className='mt-7 md:mt-14 mb-4 md:mb-8'>
+                <Faq></Faq>
             </section>
         </>
     );

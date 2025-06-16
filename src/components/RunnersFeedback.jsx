@@ -29,9 +29,9 @@ const RunnersFeedback = () => {
 
     return (
         <>
-            <h1 className='mb-2 text-2xl md:mb-4 md:text-4xl font-bold text-secondary'>Runners' Feedbacks</h1>
+            <h1 className='mb-2 text-2xl md:mb-4 md:text-4xl font-bold text-secondary'>Runners' Feedback</h1>
             <p className='mb-2 md:mb-4'>Love running? So do they. Here's what they had to say!</p>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mt-4 md:mt-8'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4'>
                 {
                     feedbacks.map((feedback, index) => <FeedbackCard key={index} feedback={feedback}></FeedbackCard>)
                 }
