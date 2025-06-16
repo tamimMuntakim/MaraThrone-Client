@@ -45,7 +45,7 @@ const UpcomingMarathons = () => {
         <>
             <h1 className='mb-2 text-2xl  md:mb-4 md:text-4xl font-bold text-primary'>Upcoming Marathons</h1>
             <p className='mb-2 md:mb-4'>Upcoming marathons will appear here. Lace up and stay ready!</p>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2 my-2 md:my-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 my-2 md:my-4'>
                 {
                     upcomingMarathons.map((marathon, index)=> <UpcomingMarathonCard key={index} marathon={marathon}></UpcomingMarathonCard>)
                 }

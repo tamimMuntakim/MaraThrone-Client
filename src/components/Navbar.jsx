@@ -12,7 +12,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to="/" className="navbar-navs">Home</NavLink></li>
         <li><NavLink to="/marathons" className="navbar-navs">Marathons</NavLink></li>
-        {(user) && <li><NavLink to="/dashboard/add-marathon" className="navbar-navs">Dashboard</NavLink></li>}
+        {(user) && <li><NavLink to="/dashboard" className="navbar-navs">Dashboard</NavLink></li>}
     </>
 
     const handleLogout = () => {

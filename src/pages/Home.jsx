@@ -3,6 +3,7 @@ import Sliders from '../components/Sliders';
 import axios from 'axios';
 import HomeMarathons from '../components/HomeMarathons';
 import UpcomingMarathons from '../components/UpcomingMarathons';
+import RunnersFeedback from '../components/RunnersFeedback';
 
 const Home = () => {
     const [homeMarathons, setHomeMarathons] = useState([]);
@@ -26,6 +27,9 @@ const Home = () => {
             </section>
             <section id="upcoming-marathons" className='mt-7 md:mt-14'>
                 <UpcomingMarathons></UpcomingMarathons>
+            </section>
+            <section id="feedback" className='mt-7 md:mt-14'>
+                <RunnersFeedback></RunnersFeedback>
             </section>
         </>
     );
