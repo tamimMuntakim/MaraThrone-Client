@@ -22,6 +22,7 @@ const AddMarathon = () => {
         newMarathon.addedByUserEmail = user.email;
         newMarathon.regCount = 0;
         console.log(newMarathon);
+        
         axios.post('http://localhost:3000/marathons', {
             ...newMarathon
         })

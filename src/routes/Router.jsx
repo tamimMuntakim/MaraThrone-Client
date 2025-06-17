@@ -18,6 +18,7 @@ import MarathonDetails from "../pages/MarathonDetails";
 import Loader from "../components/Loader";
 import PrivateRoute from "../providers/PrivateRoute";
 import axios from "axios";
+import RegisterMarathon from "../pages/RegisterMarathon";
 
 const router = createBrowserRouter(
     [
@@ -39,7 +40,10 @@ const router = createBrowserRouter(
                             throw new Response("Marathon not found", { status: 404 });
                         }
                     },
-                    element: <Marathons></Marathons>,
+                    element:
+                        <PrivateRoute>
+                            <Marathons></Marathons>
+                        </PrivateRoute>,
                     hydrateFallbackElement: <Loader></Loader>,
                 },
                 {
@@ -58,6 +62,23 @@ const router = createBrowserRouter(
                             <MarathonDetails></MarathonDetails>
                         </PrivateRoute>,
                     hydrateFallbackElement: <Loader></Loader>,
+                },
+                {
+                    path: "/registration/:id",
+                    loader: async ({ params }) => {
+                        const { id } = params;
+                        try {
+                            const response = await axios.get(`http://localhost:3000/marathons/${id}`);
+                            return response.data;
+                        } catch (error) {
+                            throw new Response("Marathon not found", { status: 404 });
+                        }
+                    },
+                    element:
+                        <PrivateRoute>
+                            <RegisterMarathon></RegisterMarathon>
+                        </PrivateRoute>,
+                    hydrateFallbackElement: <Loader></Loader>
                 },
             ]
         },

@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const MarathonDetails = () => {
     const marathon = useLoaderData();
@@ -33,13 +33,14 @@ const MarathonDetails = () => {
                     <span className="text-sm text-gray-700">
                         <span className="font-semibold">{marathon?.regCount}</span> already registered
                     </span>
-                    <button className="text-white btn btn-sm md:btn-md btn-secondary disabled:cursor-not-allowed"
+                    <Link className="text-white btn btn-sm md:btn-md btn-secondary disabled:cursor-not-allowed"
                         disabled={
                             !(now >= parseISO(marathon?.regStartDate) && now <= parseISO(marathon?.regEndDate))
                         }
+                    to={`/registration/${marathon?._id}`}
                     >
                         Register Now
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
