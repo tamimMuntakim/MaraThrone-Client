@@ -24,7 +24,7 @@ const RegisterMarathon = () => {
                     axios.patch(`http://localhost:3000/marathons/increment/${marathon?._id}`)
                         .then(function (res) {
                             if (res?.data?.modifiedCount) {
-                                navigate("/marathons");
+                                navigate("/dashboard/my-applied-marathons");
                                 Swal.fire({
                                     icon: "success",
                                     title: "Registration successfull !!",

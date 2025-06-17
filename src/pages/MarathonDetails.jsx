@@ -1,6 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
+import CountDown from '../components/CountDown';
 
 const MarathonDetails = () => {
     const marathon = useLoaderData();
@@ -10,6 +11,7 @@ const MarathonDetails = () => {
         <section id="marathon-details" className='mb-4 md:md-8'>
             <div className="bg-white rounded-xl overflow-hidden shadow-md max-w-3xl mx-auto">
                 <img src={marathon?.marathonImg} alt={marathon?.title} className="w-full h-56 object-cover" />
+                <CountDown endTime={marathon?.regEndDate }></CountDown>
                 <div className="p-6 space-y-3">
                     <h2 className="text-lg md:text-2xl font-bold text-gray-800">{marathon?.title}</h2>
                     <p className="text-xs md:text-sm text-gray-500">{marathon?.location} ~ {marathon?.distance}</p>

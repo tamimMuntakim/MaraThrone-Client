@@ -10,7 +10,7 @@ const MyAppliedMarathons = () => {
     const [myAppliedMarathons, setMyAppliedMarathons] = useState([]);
 
     const [refresh, setRefresh] = useState(false);
-    const [modalMarathon, setModalMarathon] = useState();
+    const [modalMarathon, setModalMarathon] = useState({});
 
     useEffect(() => {
         axios.get(`http://localhost:3000/my-registrations?email=${user?.email}`)
@@ -155,17 +155,13 @@ const MyAppliedMarathons = () => {
                     <h1 className='text-xl md:mt-8 md:mb-6 md:text-2xl font-bold text-primary text-center'>Update Registration Details</h1>
                     <form className="fieldset p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 items-end" onSubmit={handleUpdateSubmit}>
                         <div className='flex flex-col gap-2 md:text-base w-full'>
-                            <label className="label font-semibold ">User Email<span className='text-red-400'>*</span> </label>
-                            <input type="text" className="input w-full " value={modalMarathon?.userEmail} readOnly name="userEmail" />
-                        </div>
-                        <div className='flex flex-col gap-2 md:text-base w-full'>
                             <label className="label font-semibold">Title<span className='text-red-400'>*</span> </label>
-                            <input type="text" className="input w-full" placeholder="Give a title" value={modalMarathon?.marathonTitle} name="marathonTitle" readOnly />
+                            <input type="text" className="input w-full" placeholder="Give a title" value={modalMarathon?.marathonTitle} readOnly />
                         </div>
                         <div className='flex flex-col gap-2 md:text-base w-full'>
                             <label className="label font-semibold">Marathon Start Date<span className='text-red-400'>*</span> </label>
                             <input type="text" className="input w-full"
-                                value={modalMarathon?.marathonStartDate} name='marathonStartDate' readOnly />
+                                value={modalMarathon?.marathonStartDate} readOnly />
                         </div>
                         <div className='flex flex-col gap-2 md:text-base w-full'>
                             <label className="label font-semibold">First Name<span className='text-red-400'>*</span> </label>
@@ -183,7 +179,7 @@ const MyAppliedMarathons = () => {
                             <label className="label font-semibold">Additional Info<span className='text-red-400'>*</span> </label>
                             <input type="text" className="input w-full" placeholder="Provide additional information" name="addInfo" required defaultValue={modalMarathon?.addInfo} />
                         </div>
-                        <button type='submit' className='btn btn-primary w-full font-bold text-white mt-4 lg:col-span-2'>Update</button>
+                        <button type='submit' className='btn btn-primary w-full font-bold text-white mt-4 md:col-span-2 lg:col-span-3'>Update</button>
                     </form>
                     <div className="modal-action px-1">
                         <form method="dialog">
