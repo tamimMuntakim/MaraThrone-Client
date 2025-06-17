@@ -61,7 +61,7 @@ const AddMarathon = () => {
                         <input type="text" className="input w-full" placeholder="Give a title" name="title" required />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
-                        <label className="label font-semibold">Start Registration Date<span className='text-red-400'>*</span> </label>
+                        <label className="label font-semibold">Registration Start Date<span className='text-red-400'>*</span> </label>
                         <DatePicker
                             className='input w-full'
                             selected={regStartDate}
@@ -70,7 +70,7 @@ const AddMarathon = () => {
                         />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
-                        <label className="label font-semibold">End Registration Date<span className='text-red-400'>*</span> </label>
+                        <label className="label font-semibold">Registration End Date<span className='text-red-400'>*</span> </label>
                         <DatePicker
                             className='input w-full'
                             selected={regEndDate}
@@ -92,17 +92,20 @@ const AddMarathon = () => {
                         <input type="text" className="input w-full" placeholder="Provide location details" name="location" required />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
-                        <label className="label font-semibold">Running Cistance<span className='text-red-400'>*</span></label>
+                        <label className="label font-semibold">Running Distance<span className='text-red-400'>*</span></label>
                         <select className="input w-full" placeholder="Select total running distance" name="distance" required>
                             <option value="">--Please choose an option--</option>
                             <option value="25K">25k</option>
+                            <option value="15K">15k</option>
                             <option value="10K">10k</option>
+                            <option value="7K">7k</option>
+                            <option value="5K">5k</option>
                             <option value="3K">3k</option>
                         </select>
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
                         <label className="label font-semibold">Description<span className='text-red-400'>*</span> </label>
-                        <input type="text" className="input w-full" placeholder="Describe the roommate" name="description" required />
+                        <input type="text" className="input w-full" placeholder="Describe the marathon" name="description" required />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
                         <label className="label font-semibold">Marathon Image<span className='text-red-400'>*</span> </label>

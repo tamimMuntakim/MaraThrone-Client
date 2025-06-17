@@ -16,6 +16,7 @@ import MyMarathons from "../pages/MyMarathons";
 import MyAppliedMarathons from "../pages/MyAppliedMarathons";
 import MarathonDetails from "../pages/MarathonDetails";
 import Loader from "../components/Loader";
+import PrivateRoute from "../providers/PrivateRoute";
 import axios from "axios";
 
 const router = createBrowserRouter(
@@ -52,14 +53,20 @@ const router = createBrowserRouter(
                             throw new Response("Marathon not found", { status: 404 });
                         }
                     },
-                    element: <MarathonDetails></MarathonDetails>,
+                    element:
+                        <PrivateRoute>
+                            <MarathonDetails></MarathonDetails>
+                        </PrivateRoute>,
                     hydrateFallbackElement: <Loader></Loader>,
                 },
             ]
         },
         {
             path: "/dashboard",
-            element: <DashboardLayout></DashboardLayout>,
+            element:
+                <PrivateRoute>
+                    <DashboardLayout></DashboardLayout>
+                </PrivateRoute>,
             children: [
                 {
                     index: true,
@@ -69,15 +76,24 @@ const router = createBrowserRouter(
                 },
                 {
                     path: "/dashboard/add-marathon",
-                    element: <AddMarathon></AddMarathon>,
+                    element:
+                        <PrivateRoute>
+                            <AddMarathon></AddMarathon>
+                        </PrivateRoute>,
                 },
                 {
                     path: "/dashboard/my-marathons",
-                    element: <MyMarathons></MyMarathons>,
+                    element:
+                        <PrivateRoute>
+                            <MyMarathons></MyMarathons>
+                        </PrivateRoute>,
                 },
                 {
                     path: "/dashboard/my-applied-marathons",
-                    element: <MyAppliedMarathons></MyAppliedMarathons>,
+                    element:
+                        <PrivateRoute>
+                            <MyAppliedMarathons></MyAppliedMarathons>
+                        </PrivateRoute>,
                 },
             ]
         },
