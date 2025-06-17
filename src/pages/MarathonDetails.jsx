@@ -31,7 +31,7 @@ const MarathonDetails = () => {
                 </div>
                 <div className="flex justify-between items-center px-6 py-4 border-t bg-gray-50">
                     <span className="text-sm text-gray-700">
-                        <span className="font-semibold">{marathon?.regCount}</span> already registered
+                        <span className="font-semibold text-primary">{marathon?.regCount}</span> already registered
                     </span>
                     <Link className="text-white btn btn-sm md:btn-md btn-secondary disabled:cursor-not-allowed"
                         disabled={

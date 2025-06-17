@@ -15,25 +15,30 @@ const RegisterMarathon = () => {
         const formData = new FormData(e.target);
         const newRegistration = Object.fromEntries(formData.entries());
         newRegistration.marathonId = marathon?._id;
-        
+
         axios.post('http://localhost:3000/registrations', {
             ...newRegistration
         })
             .then(function (response) {
                 if (response?.data?.insertedId) {
-                    navigate("/marathons");
-                    Swal.fire({
-                        icon: "success",
-                        title: "Registration successfull !!",
-                        timer: 1500
-                    });
-                    e.target.reset();
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Please try again later!!",
-                        timer: 1500
-                    });
+                    axios.patch(`http://localhost:3000/marathons/increment/${marathon?._id}`)
+                        .then(function (res) {
+                            if (res?.data?.modifiedCount) {
+                                navigate("/marathons");
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Registration successfull !!",
+                                    timer: 1500
+                                });
+                                e.target.reset();
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Please try again later!!",
+                                    timer: 1500
+                                });
+                            }
+                        }) 
                 }
             })
             .catch(function (error) {
@@ -56,12 +61,12 @@ const RegisterMarathon = () => {
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
                         <label className="label font-semibold">Title<span className='text-red-400'>*</span> </label>
-                        <input type="text" className="input w-full" placeholder="Give a title" value={marathon?.title} readOnly />
+                        <input type="text" className="input w-full" placeholder="Give a title" value={marathon?.title} name="marathonTitle" readOnly />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
                         <label className="label font-semibold">Marathon Start Date<span className='text-red-400'>*</span> </label>
                         <input type="text" className="input w-full"
-                            value={format(parseISO(marathon?.regStartDate), "EEEE, MMMM do, yyyy")} readOnly />
+                            value={format(parseISO(marathon?.regStartDate), "EEEE, MMMM do, yyyy")} name='marathonStartDate' readOnly />
                     </div>
                     <div className='flex flex-col gap-2 md:text-base w-full'>
                         <label className="label font-semibold">First Name<span className='text-red-400'>*</span> </label>

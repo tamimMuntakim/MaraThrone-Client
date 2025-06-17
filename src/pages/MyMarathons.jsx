@@ -60,8 +60,6 @@ const MyMarathons = () => {
                 axios.delete(`http://localhost:3000/marathons/${id}`)
                     .then((result) => {
                         if (result?.data?.deletedCount) {
-                            // const newMyMarathons = myMarathons.filter((myMarathon) => myMarathon._id != id);
-                            // setMyMarathons(newMyMarathons);
                             setRefresh(!refresh);
                             Swal.fire({
                                 icon: "success",
@@ -88,6 +86,7 @@ const MyMarathons = () => {
         updatedMarathon.regStartDate = newRegStartDate;
         updatedMarathon.regEndDate = newRegEndDate;
         updatedMarathon.marathonStartDate = newMarathonStartDate;
+
         axios.patch(`http://localhost:3000/marathons/${modalMarathon?._id}`, updatedMarathon)
             .then((result) => {
                 if (result?.data?.modifiedCount) {
