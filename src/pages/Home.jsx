@@ -9,7 +9,7 @@ import Faq from '../components/Faq';
 const Home = () => {
     const [homeMarathons, setHomeMarathons] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/marathons?limit=true')
+        axios.get('https://b11-assn-11-mara-throne-server.vercel.app/marathons?limit=true')
             .then(function (response) {
                 setHomeMarathons(response.data);
             })

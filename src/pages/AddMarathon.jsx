@@ -21,9 +21,8 @@ const AddMarathon = () => {
         newMarathon.createdAt = new Date();
         newMarathon.addedByUserEmail = user.email;
         newMarathon.regCount = 0;
-        console.log(newMarathon);
         
-        axios.post('http://localhost:3000/marathons', {
+        axios.post('https://b11-assn-11-mara-throne-server.vercel.app/marathons', {
             ...newMarathon
         })
             .then(function (response) {
