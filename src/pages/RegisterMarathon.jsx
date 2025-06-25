@@ -52,6 +52,7 @@ const RegisterMarathon = () => {
 
     return (
         <section id="register-marathon">
+            <title>MaraThrone || Register Marathon</title>
             <h1 className='mt-5 mb-3 text-2xl md:mt-8 md:mb-6 md:text-4xl font-bold text-secondary text-center'>Marathon Registration Details</h1>
             <div className='bg-base-200 border-base-300 rounded-box border mb-3 md:mb-6'>
                 <form className="fieldset p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 items-end" onSubmit={handleRegisterSubmit}>

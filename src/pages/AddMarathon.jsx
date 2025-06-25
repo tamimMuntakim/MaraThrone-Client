@@ -52,6 +52,7 @@ const AddMarathon = () => {
 
     return (
         <div>
+            <title>MaraThrone || Add Marathon</title>
             <h1 className='mt-5 mb-3 text-2xl md:mt-8 md:mb-6 md:text-4xl font-bold text-secondary text-center'>New Marathon Details</h1>
             <p className='mb-3 md:mb-6 text-center'>Add new marathon details to help others find suitable event easily</p>
             <div className='bg-base-200 border-base-300 rounded-box border mb-3 md:mb-6'>

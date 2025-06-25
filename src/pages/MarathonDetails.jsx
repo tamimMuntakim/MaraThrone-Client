@@ -9,6 +9,7 @@ const MarathonDetails = () => {
 
     return (
         <section id="marathon-details" className='mb-4 md:md-8'>
+            <title>MaraThrone || Marathon Details</title>
             <div className="bg-white rounded-xl overflow-hidden shadow-md max-w-3xl mx-auto">
                 <img src={marathon?.marathonImg} alt={marathon?.title} className="w-full h-56 object-cover" />
                 <CountDown endTime={marathon?.regEndDate }></CountDown>

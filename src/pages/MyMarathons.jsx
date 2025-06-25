@@ -118,6 +118,7 @@ const MyMarathons = () => {
 
     return (
         <section id="my-marathons" className='mt-5 md:mt-8'>
+            <title>MaraThrone || My Marathons</title>
             <h1 className='mb-2 text-2xl md:mb-4 md:text-4xl font-bold text-secondary text-center'>My Marathons</h1>
             <p className='mb-2 md:mb-4 text-center'>Browse all of your marathon listings</p>
             <div className="overflow-x-auto rounded-box border border-slate-200 bg-base-100 mb-8 ">
