@@ -28,7 +28,7 @@ const Faq = () => {
     return (
         <>
             <h1 className='mb-2 text-2xl  md:mb-4 md:text-4xl font-bold text-primary'>Frequently Asked Questions (FAQ)</h1>
-            <div className="join join-vertical bg-base-200 w-full rounded-md md:rounded-xl overflow-hidden text-sm md:text-base">
+            <div className="join join-vertical bg-base-200 w-full rounded-lg overflow-hidden text-sm md:text-base">
                 {
                     faqs.map((faq, index)=><FaqCard key={index} faq={faq}></FaqCard>)
                 }

@@ -4,7 +4,7 @@ import React from 'react';
 const UpcomingMarathonCard = ({ marathon }) => {
 
     return (
-        <div className="bg-base-100 px-4 md:px-6 py-2 md:py-4 shadow-sm hover:shadow-md hover:border-slate-300 border border-slate-300 rounded md:rounded-md card">
+        <div className="bg-base-100 px-4 md:px-6 py-2 md:py-4 shadow-sm hover:shadow-md hover:border-slate-300 border border-slate-300 rounded-lg card">
             <div className='card'>
                 <div className="mb-2">
                     <h2 className="md:text-xl font-semibold text-blue-900">{marathon?.title}</h2>

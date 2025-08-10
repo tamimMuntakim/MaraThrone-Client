@@ -7,7 +7,7 @@ const ErrorPage = () => {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 md:px-0">
             <title>MaraThrone || 404 Not Found</title>
 
-            <div className="bg-white rounded-3xl w-full max-w-md mx-auto flex flex-col items-center p-10 shadow-md shadow-red-200 text-center">
+            <div className="bg-white rounded-lg w-full max-w-md mx-auto flex flex-col items-center p-10 shadow-md shadow-red-200 text-center">
                 <div className="bg-red-200 rounded-full p-6 shadow-sm shadow-red-200">
                     <TbFaceIdError className="text-red-600 w-20 h-20 md:w-28 md:h-28" />
                 </div>

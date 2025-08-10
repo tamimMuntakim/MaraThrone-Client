@@ -36,7 +36,7 @@ const router = createBrowserRouter(
                     path: "/marathons",
                     loader: async () => {
                         try {
-                            const response = await axios.get("http://localhost:3000/marathons");
+                            const response = await axios.get("https://b11-assn-11-mara-throne-server.vercel.app/marathons");
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });
@@ -53,7 +53,7 @@ const router = createBrowserRouter(
                     loader: async ({ params }) => {
                         const { id } = params;
                         try {
-                            const response = await axios.get(`http://localhost:3000/marathons/${id}`);
+                            const response = await axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`);
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });
@@ -70,7 +70,7 @@ const router = createBrowserRouter(
                     loader: async ({ params }) => {
                         const { id } = params;
                         try {
-                            const response = await axios.get(`http://localhost:3000/marathons/${id}`);
+                            const response = await axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`);
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });

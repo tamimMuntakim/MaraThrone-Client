@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const AllMarathonsCard = ({ marathon }) => {
     return (
-        <div className="card bg-base-100 shadow-sm hover:shadow-md hover:border-slate-400">
+        <div className="card bg-base-100 shadow-sm hover:shadow-md hover:border-slate-400 border border-slate-300">
             <figure>
                 <img
                     src={marathon?.marathonImg}
