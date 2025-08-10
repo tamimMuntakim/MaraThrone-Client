@@ -13,6 +13,8 @@ const Navbar = () => {
         <li><NavLink to="/" className="navbar-navs">Home</NavLink></li>
         <li><NavLink to="/marathons" className="navbar-navs">Marathons</NavLink></li>
         {(user) && <li><NavLink to="/dashboard" className="navbar-navs">Dashboard</NavLink></li>}
+        <li><NavLink to="/about-us" className="navbar-navs">About Us</NavLink></li>
+        <li><NavLink to="/contact-us" className="navbar-navs">Contact Us</NavLink></li>
     </>
 
     const handleLogout = () => {
@@ -45,7 +47,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-lg md:text-2xl px-0 text-secondary font-bold"><img src="https://img.icons8.com/matisse/100/running.png" alt="running" className='w-[30px] md:w-[50px] h-auto hidden md:inline' />Mara<p className='-ml-2 text-primary '>Throne</p></Link>
+                <Link to="/" className="btn btn-ghost text-lg md:text-xl px-0 text-secondary font-bold">
+                    <img src="https://img.icons8.com/matisse/100/running.png" alt="running" className='w-[25px] md:w-[40px] h-auto hidden md:inline' />
+                    Mara<p className='-ml-2 text-primary '>Throne</p>
+                </Link>
             </div>
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-3 items-center">

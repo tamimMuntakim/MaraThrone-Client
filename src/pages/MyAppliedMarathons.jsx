@@ -13,7 +13,7 @@ const MyAppliedMarathons = () => {
     const [modalMarathon, setModalMarathon] = useState({});
 
     useEffect(() => {
-        axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/my-registrations?email=${user?.email}`)
+        axios.get(`http://localhost:3000/my-registrations?email=${user?.email}`)
             .then(function (response) {
                 setMyAppliedMarathons(response.data);
             })
@@ -23,7 +23,7 @@ const MyAppliedMarathons = () => {
     }, [user?.email, refresh])
 
     const handleUpdate = (id) => {
-        axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/registrations/${id}`)
+        axios.get(`http://localhost:3000/registrations/${id}`)
             .then(function (response) {
                 setModalMarathon(response.data);
                 document.getElementById('my_modal_register').showModal();
@@ -38,7 +38,7 @@ const MyAppliedMarathons = () => {
         const formData = new FormData(e.target);
         const updatedRegistration = Object.fromEntries(formData.entries());
 
-        axios.patch(`https://b11-assn-11-mara-throne-server.vercel.app/registrations/${modalMarathon?._id}`, updatedRegistration)
+        axios.patch(`http://localhost:3000/registrations/${modalMarathon?._id}`, updatedRegistration)
             .then((result) => {
                 if (result?.data?.modifiedCount) {
                     setRefresh(!refresh);
@@ -78,10 +78,10 @@ const MyAppliedMarathons = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://b11-assn-11-mara-throne-server.vercel.app/registrations/${id}`)
+                axios.delete(`http://localhost:3000/registrations/${id}`)
                     .then(function (response) {
                         if (response?.data?.deletedCount) {
-                            axios.patch(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/decrement/${marathonId}`)
+                            axios.patch(`http://localhost:3000/marathons/decrement/${marathonId}`)
                                 .then(function (res) {
                                     if (res?.data?.modifiedCount) {
                                         setRefresh(!refresh);

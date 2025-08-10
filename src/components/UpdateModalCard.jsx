@@ -8,7 +8,7 @@ const UpdateModalCard = ({ modalMarathonId }) => {
 
     useEffect(() => {
         if (modalMarathonId){
-            axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${modalMarathonId}`)
+            axios.get(`http://localhost:3000/marathons/${modalMarathonId}`)
                 .then(function (response) {
                     setModalMarathon(response.data);
                 })

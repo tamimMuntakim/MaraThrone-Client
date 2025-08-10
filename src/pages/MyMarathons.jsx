@@ -22,7 +22,7 @@ const MyMarathons = () => {
     const { user } = use(AuthContext);
 
     useEffect(() => {
-        axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/my-marathons?email=${user?.email}`)
+        axios.get(`http://localhost:3000/my-marathons?email=${user?.email}`)
             .then(function (response) {
                 setMyMarathons(response.data);
             })
@@ -32,7 +32,7 @@ const MyMarathons = () => {
     }, [user?.email, refresh])
 
     const handleUpdate = (id) => {
-        axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`)
+        axios.get(`http://localhost:3000/marathons/${id}`)
             .then(function (response) {
                 setModalMarathon(response.data);
                 setDistance(response.data?.distance || "");
@@ -57,7 +57,7 @@ const MyMarathons = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`)
+                axios.delete(`http://localhost:3000/marathons/${id}`)
                     .then((result) => {
                         if (result?.data?.deletedCount) {
                             setRefresh(!refresh);
@@ -87,7 +87,7 @@ const MyMarathons = () => {
         updatedMarathon.regEndDate = newRegEndDate;
         updatedMarathon.marathonStartDate = newMarathonStartDate;
 
-        axios.patch(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${modalMarathon?._id}`, updatedMarathon)
+        axios.patch(`http://localhost:3000/marathons/${modalMarathon?._id}`, updatedMarathon)
             .then((result) => {
                 if (result?.data?.modifiedCount) {
                     setRefresh(!refresh);

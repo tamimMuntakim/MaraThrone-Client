@@ -19,6 +19,8 @@ import Loader from "../components/Loader";
 import PrivateRoute from "../providers/PrivateRoute";
 import axios from "axios";
 import RegisterMarathon from "../pages/RegisterMarathon";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter(
     [
@@ -34,7 +36,7 @@ const router = createBrowserRouter(
                     path: "/marathons",
                     loader: async () => {
                         try {
-                            const response = await axios.get("https://b11-assn-11-mara-throne-server.vercel.app/marathons");
+                            const response = await axios.get("http://localhost:3000/marathons");
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });
@@ -51,7 +53,7 @@ const router = createBrowserRouter(
                     loader: async ({ params }) => {
                         const { id } = params;
                         try {
-                            const response = await axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`);
+                            const response = await axios.get(`http://localhost:3000/marathons/${id}`);
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });
@@ -68,7 +70,7 @@ const router = createBrowserRouter(
                     loader: async ({ params }) => {
                         const { id } = params;
                         try {
-                            const response = await axios.get(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/${id}`);
+                            const response = await axios.get(`http://localhost:3000/marathons/${id}`);
                             return response.data;
                         } catch (error) {
                             throw new Response("Marathon not found", { status: 404 });
@@ -79,6 +81,14 @@ const router = createBrowserRouter(
                             <RegisterMarathon></RegisterMarathon>
                         </PrivateRoute>,
                     hydrateFallbackElement: <Loader></Loader>
+                },
+                {
+                    path: "/about-us",
+                    element: <AboutUs></AboutUs>,
+                },
+                {
+                    path: "/contact-us",
+                    element: <ContactUs></ContactUs>,
                 },
             ]
         },

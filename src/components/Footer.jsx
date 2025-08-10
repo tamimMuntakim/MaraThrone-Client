@@ -10,7 +10,7 @@ const Footer = () => {
     const { user } = use(AuthContext);
 
     return (
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+        <footer className="footer sm:footer-horizontal w-11/12 md:container mx-auto">
             <aside className='space-y-1 md:space-y-2'>
                 <Link to="/" className="text-lg md:text-2xl px-0 text-secondary font-bold flex items-center"><img src="https://img.icons8.com/matisse/100/running.png" alt="running" className='w-[25px] md:w-[40px] h-auto' />Mara<p className=' text-primary '>Throne</p></Link>
                 <p className=''>Your all-in-one platform for seamless marathon planning and management.</p>

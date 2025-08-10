@@ -16,12 +16,12 @@ const RegisterMarathon = () => {
         const newRegistration = Object.fromEntries(formData.entries());
         newRegistration.marathonId = marathon?._id;
 
-        axios.post('https://b11-assn-11-mara-throne-server.vercel.app/registrations', {
+        axios.post('http://localhost:3000/registrations', {
             ...newRegistration
         })
             .then(function (response) {
                 if (response?.data?.insertedId) {
-                    axios.patch(`https://b11-assn-11-mara-throne-server.vercel.app/marathons/increment/${marathon?._id}`)
+                    axios.patch(`http://localhost:3000/marathons/increment/${marathon?._id}`)
                         .then(function (res) {
                             if (res?.data?.modifiedCount) {
                                 navigate("/dashboard/my-applied-marathons");

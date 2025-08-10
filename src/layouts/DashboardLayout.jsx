@@ -22,7 +22,7 @@ const DashboardLayout = () => {
                     <Outlet></Outlet>
                 </div>
             </main>
-            <footer>
+            <footer className='bg-neutral text-neutral-content p-10'>
                 <Footer></Footer>
             </footer>
         </>

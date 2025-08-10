@@ -14,7 +14,7 @@ const HomeLayout = () => {
             <main className='w-11/12 md:container mx-auto my-4 md:my-6 min-h-[calc(100vh-460px)] md:min-h-[calc(100vh-340px)]'>
                 <Outlet></Outlet>
             </main>
-            <footer>
+            <footer className='bg-neutral text-neutral-content px-3 py-8 md:p-10'>
                 <Footer></Footer>
             </footer>
         </>
