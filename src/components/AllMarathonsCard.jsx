@@ -15,10 +15,13 @@ const AllMarathonsCard = ({ marathon }) => {
                 <h2 className="card-title">
                     {marathon?.title}
                 </h2>
-                <div className="badge badge-primary text-white font-semibold badge-xs md:badge-sm">{marathon?.location}</div>
+                <div className='flex gap-2'>
+                    <div className="badge badge-secondary text-white font-semibold badge-xs md:badge-sm">{marathon?.location}</div>
+                    <div className="badge badge-primary text-white font-semibold badge-xs md:badge-sm">{marathon?.distance}</div>
+                </div>
                 <p>Registration: {format(parseISO(marathon?.regStartDate), "EEEE, MMMM do, yyyy")} - {format(parseISO(marathon?.regEndDate), "EEEE, MMMM do, yyyy")}</p>
                 <div className="card-actions justify-end">
-                    <Link className='btn btn-xs md:btn-sm text-white btn-secondary' to={`/marathon-details/${marathon?._id}`}>See Details</Link>
+                    <Link className='btn btn-xs md:btn-sm text-white btn-primary' to={`/marathon-details/${marathon?._id}`}>See Details</Link>
                 </div>
             </div>
         </div>
