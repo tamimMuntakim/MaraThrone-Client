@@ -6,7 +6,7 @@ const AboutUs = () => {
     return (
         <div className="bg-white text-gray-800">
             {/* Hero Section */}
-            <section className="bg-gradient-to-r from-primary via-cyan-700 to-secondary py-16">
+            <section className="bg-gradient-to-r from-primary via-cyan-700 to-secondary py-16 rounded-lg">
                 <div className="max-w-6xl mx-auto px-4 text-center text-white">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">About MaraThrone</h1>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto">
@@ -47,7 +47,7 @@ const AboutUs = () => {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-100 py-16">
+            <section className="bg-gray-100 py-16 rounded-lg">
                 <div className="max-w-4xl mx-auto text-center px-4">
                     <h2 className="text-3xl font-bold mb-4">Join the MaraThrone Movement</h2>
                     <p className="text-gray-700 mb-6">
