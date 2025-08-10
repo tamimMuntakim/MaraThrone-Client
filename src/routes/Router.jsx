@@ -102,6 +102,7 @@ const router = createBrowserRouter(
                 {
                     index: true,
                     element: <div className="flex justify-center items-center">
+                        <title>MaraThrone || Dashboard Home</title>
                         <h1 className="text-2xl md:text-4xl font-bold text-secondary my-8 md:my-20">Welcome to Dashboard!</h1>
                     </div>,
                 },
