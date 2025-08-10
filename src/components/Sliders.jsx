@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { NavLink } from 'react-router';
 
 const Sliders = () => {
     const slides = [
@@ -12,19 +13,22 @@ const Sliders = () => {
             title: "Plan Your Marathon with Ease",
             description: "From route setup to volunteer coordination, manage every detail effortlessly.",
             buttonText: "Get Started",
-            bgImg: "https://i.ibb.co/4nv9L4cj/marathon1.jpg"
+            bgImg: "https://i.ibb.co/4nv9L4cj/marathon1.jpg",
+            to: "/marathons"
         },
         {
             title: "Track Runners & Results",
             description: "Monitor live progress, participant stats, and finish times in real-time.",
             buttonText: "View Dashboard",
-            bgImg: "https://i.ibb.co/GQHsXZ50/marathon2.jpg"
+            bgImg: "https://i.ibb.co/GQHsXZ50/marathon2.jpg",
+            to: "/dashboard"
         },
         {
             title: "Simplified Registration",
             description: "Streamlined sign-up process for runners, volunteers, and sponsors alike.",
             buttonText: "Register Now",
-            bgImg: "https://i.ibb.co/jvyYNZxH/marathon3.jpg"
+            bgImg: "https://i.ibb.co/jvyYNZxH/marathon3.jpg",
+            to: "/marathons"
         }
     ];
 
@@ -51,10 +55,10 @@ const Sliders = () => {
                         >
                             <div className="hero-overlay"></div>
                             <div className="hero-content text-neutral-content text-center">
-                                <div className="max-w-md">
+                                <div className="max-w-md text-white">
                                     <h1 className="text-2xl md:text-5xl font-bold">{slide.title}</h1>
                                     <p className="text-sm md:text-xl mt-4">{slide.description}</p>
-                                    <button className="mt-4 md:mt-8 btn btn-primary btn-active text-white btn-sm md:btn-md md:font-bold md:w-auto">{slide.buttonText}</button>
+                                    <NavLink to={slide.to} className="mt-4 md:mt-8 btn btn-primary btn-active text-white btn-sm md:btn-md md:font-bold md:w-auto">{slide.buttonText}</NavLink>
                                 </div>
                             </div>
                         </div>
