@@ -4,18 +4,58 @@ import { Tooltip } from 'react-tooltip'
 import { use } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { MdOutlineAddCircleOutline, MdOutlinePadding } from 'react-icons/md';
+import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5';
+import { GoHome } from "react-icons/go";
 
 const Navbar = () => {
 
     const { user, logOut } = use(AuthContext);
 
-    const links = <>
-        <li><NavLink to="/" className="navbar-navs">Home</NavLink></li>
-        <li><NavLink to="/marathons" className="navbar-navs">Marathons</NavLink></li>
-        {(user) && <li><NavLink to="/dashboard" className="navbar-navs">Dashboard</NavLink></li>}
-        <li><NavLink to="/about-us" className="navbar-navs">About Us</NavLink></li>
-        <li><NavLink to="/contact-us" className="navbar-navs">Contact Us</NavLink></li>
-    </>
+    const links = (
+        <>
+            <li>
+                <NavLink to="/" className="navbar-navs">Home</NavLink>
+            </li>
+            <li>
+                <NavLink to="/marathons" className="navbar-navs">Marathons</NavLink>
+            </li>
+
+            {user && (
+                <li>
+                    <div className="dropdown dropdown-hover">
+                        <NavLink to="/dashboard" tabIndex={0} role="button" end>
+                            Dashboard
+                        </NavLink>
+                        <ul
+                            tabIndex={0}
+                            className="dropdown-content menu bg-base-100 rounded-box z-50 w-48 md:w-56 p-2 shadow-sm"
+                        >
+                            <li>
+                                <NavLink to="/dashboard" className="navbar-navs" end><GoHome/> Dashboard Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/add-marathon" className="navbar-navs"><MdOutlineAddCircleOutline/> Add Marathon</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/my-marathons" className="navbar-navs"><MdOutlinePadding/> My Marathons</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/my-applied-marathons" className="navbar-navs"><IoCheckmarkDoneCircleOutline/> My Applied Marathons</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            )}
+
+            <li>
+                <NavLink to="/about-us" className="navbar-navs">About Us</NavLink>
+            </li>
+            <li>
+                <NavLink to="/contact-us" className="navbar-navs">Contact Us</NavLink>
+            </li>
+        </>
+    );
 
     const handleLogout = () => {
         logOut()
