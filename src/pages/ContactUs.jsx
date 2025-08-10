@@ -17,19 +17,19 @@ const ContactUs = () => {
             {/* Contact Info */}
             <section className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-8">
                 <div className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
-                    <FaEnvelope className="text-orange-500 text-4xl mx-auto mb-4" />
+                    <FaEnvelope className="text-primary text-4xl mx-auto mb-4" />
                     <h3 className="font-bold text-xl mb-2">Email</h3>
                     <p className="text-gray-600">support@marathrone.com</p>
                 </div>
 
                 <div className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
-                    <FaPhone className="text-orange-500 text-4xl mx-auto mb-4" />
+                    <FaPhone className="text-primary text-4xl mx-auto mb-4" />
                     <h3 className="font-bold text-xl mb-2">Phone</h3>
                     <p className="text-gray-600">+880 123-456-7890</p>
                 </div>
 
                 <div className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
-                    <FaMapMarkerAlt className="text-orange-500 text-4xl mx-auto mb-4" />
+                    <FaMapMarkerAlt className="text-primary text-4xl mx-auto mb-4" />
                     <h3 className="font-bold text-xl mb-2">Location</h3>
                     <p className="text-gray-600">Dhaka, Bangladesh</p>
                 </div>
@@ -45,7 +45,7 @@ const ContactUs = () => {
                             <input
                                 type="text"
                                 placeholder="Your name"
-                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                         </div>
                         <div>
@@ -53,7 +53,7 @@ const ContactUs = () => {
                             <input
                                 type="email"
                                 placeholder="you@example.com"
-                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                         </div>
                         <div>
@@ -61,12 +61,12 @@ const ContactUs = () => {
                             <textarea
                                 rows="5"
                                 placeholder="Write your message..."
-                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
                             ></textarea>
                         </div>
                         <button
                         type="button"
-                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition"
+                            className="w-full btn btn-primary text-white"
                         >
                             Send Message
                         </button>

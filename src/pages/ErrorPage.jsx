@@ -3,15 +3,32 @@ import { Link } from 'react-router';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 const ErrorPage = () => {
-
     return (
-        <div className='w-11/12 md:container mx-auto min-h-screen'>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 md:px-0">
             <title>MaraThrone || 404 Not Found</title>
-            <div className="translate-y-1/2 md:translate-y-1/3 bg-base-200 rounded-2xl w-full md:w-[40%] mx-auto flex flex-col justify-center items-center py-8 px-4 md:px-8 shadow-md shadow-red-100 text-center">
-                <div className='bg-red-500 rounded-xl shadow-md shadow-red-200'><TbFaceIdError className='text-white w-[50px] md:w-[150px] h-auto' /></div>
-                <span className='text-lg md:text-2xl font-bold text-red-500 mt-4 mb-2 md:mt-8 md:mb-4'>404 - page not found</span>
-                <span className='font-bold'>Oops! Something went wrong....</span>
-                <Link to="/"><button className="btn rounded-4xl btn-accent font-bold px-4 mt-4 md:px-8 px-4 mt-4 md:mt-8 text-white"><IoArrowBackCircleSharp className='w-[25px] md:w-[30px] h-auto'/>Back to Home</button></Link>
+
+            <div className="bg-white rounded-3xl w-full max-w-md mx-auto flex flex-col items-center p-10 shadow-md shadow-red-200 text-center">
+                <div className="bg-red-200 rounded-full p-6 shadow-sm shadow-red-200">
+                    <TbFaceIdError className="text-red-600 w-20 h-20 md:w-28 md:h-28" />
+                </div>
+
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mt-8 mb-2">
+                    404
+                </h1>
+
+                <p className="text-2xl font-semibold text-gray-700 mb-4">
+                    Page Not Found
+                </p>
+
+                <p className="text-gray-600 mb-8 max-w-xs md:max-w-sm">
+                    Oops! The page you are looking for doesn’t exist or has been moved.
+                    Please check the URL or return to the homepage.
+                </p>
+
+                <Link to="/" className="btn btn-accent rounded-full px-8 py-3 flex items-center gap-3 text-white font-semibold">
+                        <IoArrowBackCircleSharp className="w-6 h-6 md:w-7 md:h-7" />
+                        Back to Home
+                </Link>
             </div>
         </div>
     );

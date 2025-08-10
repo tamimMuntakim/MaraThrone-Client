@@ -56,7 +56,7 @@ const AboutUs = () => {
                     </p>
                     <Link
                         to="/marathons"
-                        className="bg-primary hover:bg-orange-400 text-white font-semibold py-3 px-6 rounded-full transition"
+                        className="btn btn-primary text-white md:btn-md"
                     >
                         Explore Marathons
                     </Link>
